@@ -79,6 +79,7 @@ while option !=5:
           
         if drawer_ans == ("yes"):
           print ("You look in the drawer, there is a pen, you take it.")
+          print ("More for the collection")
 
         elif drawer_ans == ("no"):
           print ("You decide to not open it")
