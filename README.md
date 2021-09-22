@@ -9,13 +9,12 @@ Simple menu for an assignment
   #when selected say "You look around the room your in, There is a single chair and a table with a drawer, open the drawer?"
     #give the player a chocie between yes and no
     # IF YES say "you took the pen.
-      add to the pen total
       
    #If no print "you left the pen in the drawer, there will be more"
    
 # inventory
   #When sleceted say "You look into your pockets and see a pen"
-  #(the number of pens can increase)
+  
   
  # Fight
   #Though there isn't any monster in this menu game thing, it is an rpg menu so there should be an attack command
@@ -27,14 +26,12 @@ Simple menu for an assignment
 
 
 
+# Code is below
 
 
 
 
-
-
-
-*#Course: CS 30
+#Course: CS 30
 #period: 3
 #Date created: 2021-09-21
 #Date Last modified: 2021-09-22
@@ -42,8 +39,8 @@ Simple menu for an assignment
 #Description: A Simple repeasting menu
 
 #Code adapted from Andy Dolinski's "Making a python #Menu"
-#"story" inspration from Ms. Cotcher's hero_menu  #example
 #https://www.youtube.com/watch?v=63nw00JqHo0&t=35s
+#exploration  "gameplay" inspration from Ms. Cotcher's hero_menu  #example
 #https://replit.com/@janicecotcher/heromenu#main.py
 
 import sys
@@ -104,11 +101,22 @@ while option !=5:
             print ("that's not a direction")
 
     elif option == 2:
-        #prints the inspecting texts
+        #prints the inspecting texts and lets the user look around the room
         time.sleep(.2)
         print()
         print ("You look around the room,")
         print ("in the corner you see a single chair and table with a drawer")
+        #Lets the user look into the drawer
+        drawer_ans = str(input("Open the drawer?:"))
+          
+        if drawer_ans == ("yes"):
+          print ("You look in the drawer, there is a pen, you take it.")
+
+        elif drawer_ans == ("no"):
+          print ("You decide to not open it")
+
+        else:
+          print ("You just look at the drawer instead of giving a valid answer")
 
     elif option == 3:
         #prints the fight text
@@ -120,7 +128,7 @@ while option !=5:
         #prints your inventory
         time.sleep(.2)
         print()
-        print ("You look in your pockets, theres a pen there")
+        print ("You look in your pockets, there are pens in it")
 
     else:
         print()
